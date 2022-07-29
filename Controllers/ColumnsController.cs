@@ -52,7 +52,7 @@ namespace RocketElevators.Controllers
         }
 
         // End point to get a specific status from a specific elevator from the list
-        // GET: api/Columns/(id#) - Status
+        // GET: api/Columns/status/(id#) - Status
         [HttpGet("status/{id}")]
         public async Task<ActionResult<string>> GetColumnStatus(long id)
         {
