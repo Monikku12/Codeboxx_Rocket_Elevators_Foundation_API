@@ -52,7 +52,7 @@ namespace RocketElevators.Controllers
         }
 
         // End point to get all the buildings with a requiring intervention status on their equipments
-        // GET: api/Buildings/list - not operational elevators list
+        // GET: api/Buildings/list - In intervention building list
         [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<Building>>> GetBuildingIntervention(long id)
         {
