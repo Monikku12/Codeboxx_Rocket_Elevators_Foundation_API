@@ -16,5 +16,6 @@ namespace RocketElevators.Models
         public DbSet<Elevator> elevators { get; set; } = null!;
         public DbSet<Building> buildings { get; set; } = null!;
         public DbSet<Lead> leads { get; set; } = null!;
+        public DbSet<Intervention> interventions { get; set; } = null!;
     }
 }

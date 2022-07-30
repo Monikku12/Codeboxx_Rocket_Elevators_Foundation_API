@@ -14,18 +14,17 @@ Database creation DBeaver community : https://dbeaver.io/download/
 Database initialization 
 To initialize the database: 
 1- be sure to have your mySQL and postgreSQL server started. 
-2- to setup the database, run the command: rails db:setup 
-3- to fill your database with fake data and see all the information in the back office, run the command: rails fake:data 
-4- From the website, a login panel will get you to the admin section. You will be able to manage your users, your employees and the quotes requested by your clients.
+2- to setup the database, in the Rails app, run the command: rails db:setup 
+3- to fill your database with fake data and see all the information in the back office, always in Rails, run the command: rails fake:data
 
-Deployment instructions Go to www.mathieubernier.com to checkout all the functionalities of the website
+Go to www.monichan.com to checkout all the functionalities of the website
 
 The REST API allows you to interact with the database on multiple points.
 
-On Postman, a collection of end points are predifine to show you what is possible with the API.
-https://www.getpostman.com/collections/f5d96eab48c383dd822b 
+On Postman, a collection of end points are predefined to show you what is possible with the API.
+https://www.getpostman.com/collections/f0f25068a6e5acfacd3d
 
-Example of a query to find the specific status of a battery
+Example of a query to find the specific status of a battery (Add the part after the GET: to the website URL. Here it would be monichan.com/api/Batteries/status/(id#). Replacing the (id#) by the desired id number).
 
 ```
 
