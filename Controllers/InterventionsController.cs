@@ -81,9 +81,9 @@ namespace RocketElevators.Controllers
             return newinterventionlist;
         }
         // End point to change the status and add the start date of a specific intervention
-        // PUT: api/Interventions/status/(id#) - Change Status and add start date.
+        // PUT: api/Interventions/inprogress/(id#) - Change Status and add start date.
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("status/{id}")]
+        [HttpPut("inprogress/{id}")]
         public async Task<ActionResult<Intervention>> PutInterventionStatusAndStartDate(long id)
         {
             var intervention = await _context.interventions.FindAsync(id);
