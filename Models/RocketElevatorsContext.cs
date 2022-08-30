@@ -11,6 +11,7 @@ namespace RocketElevators.Models
         }
 
         public DbSet<User> users { get; set; } = null!;
+        public DbSet<Employee> employees { get; set; } = null!;
         public DbSet<Battery> batteries { get; set; } = null!;
         public DbSet<Column> columns { get; set; } = null!;
         public DbSet<Elevator> elevators { get; set; } = null!;
