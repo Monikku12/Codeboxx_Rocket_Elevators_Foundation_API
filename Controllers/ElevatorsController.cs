@@ -25,10 +25,10 @@ namespace RocketElevators.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Elevator>>> Getelevators()
         {
-          if (_context.elevators == null)
-          {
-              return NotFound();
-          }
+            if (_context.elevators == null)
+            {
+                return NotFound();
+            }
             return await _context.elevators.ToListAsync();
         }
 
@@ -37,10 +37,10 @@ namespace RocketElevators.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Elevator>> GetElevator(long id)
         {
-          if (_context.elevators == null)
-          {
-              return NotFound();
-          }
+            if (_context.elevators == null)
+            {
+                return NotFound();
+            }
             var elevator = await _context.elevators.FindAsync(id);
             
             if (elevator == null)
@@ -56,10 +56,10 @@ namespace RocketElevators.Controllers
         [HttpGet("status/{id}")]
         public async Task<ActionResult<string>> GetElevatorStatus(long id)
         {
-          if (_context.elevators == null)
-          {
-              return NotFound();
-          }
+            if (_context.elevators == null)
+            {
+                return NotFound();
+            }
             var elevator = await _context.elevators.FindAsync(id);
             var status = elevator.Status; 
             if (elevator == null)
@@ -75,10 +75,10 @@ namespace RocketElevators.Controllers
         [HttpGet("list")]
         public async Task<ActionResult<IEnumerable<Elevator>>> GetOperationalElevator()
         {
-          if (_context.elevators == null)
-          {
-              return NotFound();
-          }
+            if (_context.elevators == null)
+            {
+                return NotFound();
+            }
             var elevatorlist = await _context.elevators.ToListAsync();
             var newelevatorlist = new List<Elevator>();
 
@@ -141,10 +141,10 @@ namespace RocketElevators.Controllers
         [HttpPost]
         public async Task<ActionResult<Elevator>> PostElevator(Elevator elevator)
         {
-          if (_context.elevators == null)
-          {
-              return Problem("Entity set 'RocketElevatorsContext.elevators'  is null.");
-          }
+            if (_context.elevators == null)
+            {
+                return Problem("Entity set 'RocketElevatorsContext.elevators'  is null.");
+            }
             _context.elevators.Add(elevator);
             await _context.SaveChangesAsync();
 
