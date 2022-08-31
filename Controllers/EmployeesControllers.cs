@@ -21,15 +21,15 @@ namespace RocketElevators.Controllers
         }
 
         // GET: api/Employees
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
-        {
-            if (_context.employees == null)
-            {
-                return NotFound();
-            }
-            return await _context.employees.ToListAsync();
-        }
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
+        // {
+        //     if (_context.employees == null)
+        //     {
+        //         return NotFound();
+        //     }
+        //     return await _context.employees.ToListAsync();
+        // }
 
         // GET: api/Employees/(id#)
         [HttpGet("{id}")]
@@ -47,6 +47,23 @@ namespace RocketElevators.Controllers
             }
 
             return employee;
+        }
+
+        // GET: api/Employees?email=(email)
+        public async Task<ActionResult<Employee>> GetEmployee(string email)
+        {
+            if (_context.employees == null)
+            {
+                return NotFound();
+            }
+            var employee = await _context.employees.FirstOrDefaultAsync(x => x.Email == email);
+
+            if (employee == null)
+            {
+                return Ok(false);
+            }
+
+            return Ok(true);
         }
 
         // PUT: api/Employees/(id#)
