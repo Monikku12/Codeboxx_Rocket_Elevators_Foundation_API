@@ -49,8 +49,7 @@ namespace RocketElevators.Controllers
             return employee;
         }
 
-        // GET: api/Employees/(email)
-        // [HttpGet("{email}")]
+        // GET: api/Employees?email=(email)
         public async Task<ActionResult<Employee>> GetEmployee(string email)
         {
             if (_context.employees == null)
