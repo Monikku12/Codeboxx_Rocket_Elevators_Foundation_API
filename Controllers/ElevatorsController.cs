@@ -106,7 +106,7 @@ namespace RocketElevators.Controllers
             var elevator = await _context.elevators.FindAsync(id);
 
             // Add the new status after the equal sign (=) between the quote marks (" ").
-            elevator.Status = "Inactive";
+            elevator.Status = "Active";
             
             var newStatus = elevator.Status;
 
