@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 
 // Add services to the container.
 builder.Services.AddDbContext<RocketElevatorsContext>(options => {
-    var connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
     Console.WriteLine("----------------------");
     Console.WriteLine("connectionString:" + connectionString);
